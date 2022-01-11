@@ -10,7 +10,7 @@
   <body>
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <ul class="main-nav__list city-list">
+        <ul class="main-nav__city-list city-list">
           <li class="city-list__item">
             <a class="city-list__link city-list__link--current">Санкт-Петербург</a>
           </li>
@@ -18,7 +18,7 @@
             <button class="city-list__button" type="button" aria-controls="other-cities">
               <span class="visually-hidden">Другие города</span>
             </button>
-            <ul class="city-list" id="other-cities">
+            <ul class="city-list city-list--nested" id="other-cities">
               <li class="city-list__item">
                 <a class="city-list__link" href="#">Москва</a>
               </li>
@@ -32,7 +32,7 @@
         <button class="main-nav__toggle" type="button" aria-controls="site-list">
           <span class="visually-hidden">Меню</span>
         </button>
-        <ul class="main-nav__list main-nav__list--site site-list" id="site-list">
+        <ul class="main-nav__site-list site-list" id="site-list">
           <li class="site-list__item">
             <a class="site-list__link" href="#">Программа</a>
           </li>
@@ -271,7 +271,7 @@
           <figure class="reviews__figure">
             <p>Рассказ о курсе от дизайнера <span lang="en">market.ru</span></p>
             <details class="reviews__details">
-              <summary class="rating__summary">Читать</summary>
+              <summary class="reviews__summary">Читать</summary>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aperiam deserunt velit accusantium quas delectus dolore quasi reprehenderit perferendis quibusdam!</p>
             </details>
           </figure>
@@ -522,26 +522,26 @@
     </main>
     <footer class="page-footer">
       <div class="page-footer__wrapper wrapper">
-        <ul class="page-footer__city-list">
-          <li class="page-footer__city-item">
-            <a class="page-footer__city-link page-footer__city-link--current">Санкт-Петербург</a>
+        <ul class="page-footer__city-list aux-city-list">
+          <li class="aux-city-list__item">
+            <a class="aux-city-list__link aux-city-list__link--current">Санкт-Петербург</a>
           </li>
-          <li class="page-footer__city-item">
-            <a class="page-footer__city-link" href="#">Москва</a>
+          <li class="aux-city-list__item">
+            <a class="aux-city-list__link" href="#">Москва</a>
           </li>
-          <li class="page-footer__city-item">
-            <a class="page-footer__city-link" href="#">Минск</a>
+          <li class="aux-city-list__item">
+            <a class="aux-city-list__link" href="#">Минск</a>
           </li>
         </ul>
-        <a class="page-footer__register-link" href="#">Запись на курс</a>
+        <a class="page-footer__link" href="#">Запись на курс</a>
         <div class="page-footer__bottom">
           <p class="page-footer__copyright" lang="en">Copyright © 2018 All rights reserved</p>
-          <ul class="page-footer__legal-list">
-            <li class="page-footer__legal-item">
-              <a href="#">Договор-оферта</a>
+          <ul class="page-footer__legal-list legal-list">
+            <li class="legal-list__item">
+              <a class="legal-list__link" href="#">Договор-оферта</a>
             </li>
-            <li class="page-footer__legal-item">
-              <a href="#">Политика конфиденциальности</a>
+            <li class="legal-list__item">
+              <a class="legal-list__link" href="#">Политика конфиденциальности</a>
             </li>
           </ul>
         </div>
