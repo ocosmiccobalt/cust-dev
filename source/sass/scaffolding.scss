@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -130,7 +133,7 @@ body {
   font-family: $font-family;
   font-weight: 400;
   font-size: 0.875rem;
-  line-height: 1.4357;
+  line-height: 1.436;
   color: $ordinary-text-color;
   -webkit-font-smoothing: antialiased;
 

@@ -1,4 +1,2 @@
-@import "normalize.scss";
-@import "variables.scss";
-@import "mixins.scss";
-@import "scaffolding.scss";
+@use "normalize";
+@use "scaffolding";
