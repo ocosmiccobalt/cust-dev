@@ -11,7 +11,7 @@
   <body>
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <ul class="main-nav__city-list city-list">
+        <ul class="main-nav__city-list city-list" role="list">
           <li class="city-list__item">
             <a class="city-list__link city-list__link--current">Санкт-Петербург</a>
           </li>
@@ -19,7 +19,7 @@
             <button class="city-list__button" type="button" aria-controls="other-cities">
               <span class="visually-hidden">Другие города</span>
             </button>
-            <ul class="city-list city-list--nested" id="other-cities">
+            <ul class="city-list city-list--nested" id="other-cities" role="list">
               <li class="city-list__item">
                 <a class="city-list__link" href="#">Москва</a>
               </li>
@@ -33,7 +33,7 @@
         <button class="main-nav__toggle" type="button" aria-controls="site-list">
           <span class="visually-hidden">Меню</span>
         </button>
-        <ul class="main-nav__site-list site-list" id="site-list">
+        <ul class="main-nav__site-list site-list" id="site-list" role="list">
           <li class="site-list__item">
             <a class="site-list__link" href="#">Программа</a>
           </li>
@@ -80,7 +80,7 @@
       <section class="stats">
         <div class="stats__wrapper wrapper">
           <h2 class="stats__title">Если вы не делаете <span lang="en">Customer Development</span> — вы не управляете движением к <span lang="en">product-market fit</span></h2>
-          <ul class="stats__list">
+          <ul class="stats__list" role="list">
             <li class="stats__item">
               <b class="stats__percentage">94% </b>
               стартапов умирают в течение 3 лет, и главная причина этого — отсутствие <span lang="en">product-market fit</span>
@@ -118,7 +118,7 @@
       <section class="program">
         <div class="program__wrapper wrapper">
           <h2 class="program__title">Что будет на курсе</h2>
-          <ul class="program__list">
+          <ul class="program__list" role="list">
             <li class="program__item">
               <b class="program__subj">7 лекций, </b>
               насыщенных практикой
@@ -146,7 +146,7 @@
       <section class="result">
         <div class="result__wrapper wrapper">
           <h2 class="result__title">Результат</h2>
-          <ul class="result__list">
+          <ul class="result__list" role="list">
             <li class="result__item result-item">
               <h3 class="result-item__title">Ты начнёшь делать <span lang="en">Customer Development</span> и проверять гипотезы в своём проекте</h3>
               <p class="result-item__description">Структура курса построена построена вокруг практики в проектах участников курса. 100% слушателей этого курса будут применять оба навыка в своих проектах</p>
@@ -198,7 +198,7 @@
               Алексей Иванов <b class="trust__occupation" lang="en">Ex-Lead Product Manager</b>
             </figcaption>
           </figure>
-          <ul class="trust__list">
+          <ul class="trust__list" role="list">
             <li class="trust__item trust-item">
               <h3 class="trust-item__title">Опыт в продукте</h3>
               <p class="trust-item__description">Отвечал за продукт поиска по изображениям, с помощью <span lang="en">Customer Development</span> и юзабилити-исследований добились кратного роста метрик</p>
@@ -222,7 +222,7 @@
       <section class="reviews">
         <div class="reviews__wrapper wrapper">
           <h2 class="reviews__title">Отзывы</h2>
-          <ul class="reviews__list">
+          <ul class="reviews__list" role="list">
             <li class="reviews__item reviews-item">
               <p class="reviews-item__name">Иван Матвейчук</p>
               <blockquote class="reviews-item__blockquote">
@@ -282,7 +282,7 @@
       <section class="past">
         <div class="past__wrapper wrapper">
           <h2 class="past__title">Как проходили прошлые потоки</h2>
-          <ul class="past__list">
+          <ul class="past__list" role="list">
             <li class="past__item past-item">
               <p class="past-item__illustration">
                 <picture>
@@ -426,7 +426,7 @@
       <section class="tariffs">
         <div class="tariffs__wrapper wrapper">
           <h2 class="tariffs__title">Стоимость для компаний</h2>
-          <ul class="tariffs__list">
+          <ul class="tariffs__list" role="list">
             <li class="tariffs__item tariff-item">
               <h3 class="tariff-item__title">32 900 ₽</h3>
               <p class="tariff-item__description">1 сотрудник</p>
@@ -458,7 +458,7 @@
       <section class="includes">
         <div class="includes__wrapper wrapper">
           <h2 class="includes__title">В стоимость входит</h2>
-          <ul class="includes__list">
+          <ul class="includes__list" role="list">
             <li class="includes__item includes-item">
               <h3 class="includes-item__title">3 методички</h3>
               <p class="includes-item__description">методичка по проведению <span lang="en">Customer Development</span> и по настройке процессов проверки гипотез</p>
@@ -501,7 +501,7 @@
       <section class="register">
         <h2 class="visually-hidden" id="register-form-label">Запись на курс</h2>
         <form class="register__form register-form" action="#" method="post" aria-labelledby="register-form-label">
-          <ul class="register-form__list">
+          <ul class="register-form__list" role="list">
             <li class="register-form__item">
               <input class="register-form__input" type="text" name="name" id="name-field" placeholder="Имя" required>
               <label class="register-form__label" for="name-field">Имя:</label>
@@ -523,7 +523,7 @@
     </main>
     <footer class="page-footer">
       <div class="page-footer__wrapper wrapper">
-        <ul class="page-footer__city-list aux-city-list">
+        <ul class="page-footer__city-list aux-city-list" role="list">
           <li class="aux-city-list__item">
             <a class="aux-city-list__link aux-city-list__link--current">Санкт-Петербург</a>
           </li>
@@ -537,7 +537,7 @@
         <a class="page-footer__link" href="#">Запись на курс</a>
         <div class="page-footer__bottom">
           <p class="page-footer__copyright" lang="en">Copyright © 2018 All rights reserved</p>
-          <ul class="page-footer__legal-list legal-list">
+          <ul class="page-footer__legal-list legal-list" role="list">
             <li class="legal-list__item">
               <a class="legal-list__link" href="#">Договор-оферта</a>
             </li>
