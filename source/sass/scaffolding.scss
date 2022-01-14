@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-cyrillic-700.woff2") format("woff2"),
+    url("../fonts/montserrat-cyrillic-700.woff") format("woff");
+  unicode-range: $cyrillic-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-latin-700.woff2") format("woff2"),
+    url("../fonts/montserrat-latin-700.woff") format("woff");
+  unicode-range: $latin-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-cyrillic-600.woff2") format("woff2"),
+    url("../fonts/montserrat-cyrillic-600.woff") format("woff");
+  unicode-range: $cyrillic-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-latin-600.woff2") format("woff2"),
+    url("../fonts/montserrat-latin-600.woff") format("woff");
+  unicode-range: $latin-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-cyrillic-500.woff2") format("woff2"),
+    url("../fonts/montserrat-cyrillic-500.woff") format("woff");
+  unicode-range: $cyrillic-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-latin-500.woff2") format("woff2"),
+    url("../fonts/montserrat-latin-500.woff") format("woff");
+  unicode-range: $latin-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-cyrillic-regular.woff2") format("woff2"),
+    url("../fonts/montserrat-cyrillic-regular.woff") format("woff");
+  unicode-range: $cyrillic-unicode-range;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../fonts/montserrat-latin-regular.woff2") format("woff2"),
+    url("../fonts/montserrat-latin-regular.woff") format("woff");
+  unicode-range: $latin-unicode-range;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../fonts/roboto-cyrillic-700.woff2") format("woff2"),
+    url("../fonts/roboto-cyrillic-700.woff") format("woff");
+  unicode-range: $cyrillic-unicode-range;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../fonts/roboto-latin-700.woff2") format("woff2"),
+    url("../fonts/roboto-latin-700.woff") format("woff");
+  unicode-range: $latin-unicode-range;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  padding: 0;
+
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.4357;
+  color: $ordinary-text-color;
+  -webkit-font-smoothing: antialiased;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
