@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+@supports (display: grid) {
+  .page-main {
+    grid-row: 2;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-main {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+}

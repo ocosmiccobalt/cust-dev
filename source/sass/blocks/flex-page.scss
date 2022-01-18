@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+@supports (display: grid) {
+  .flex-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100%;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .flex-page {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+  }
+
+  @supports (display: grid) {
+    .flex-page {
+      display: grid;
+
+      height: auto;
+    }
+  }
+}

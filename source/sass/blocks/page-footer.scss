@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+@supports (display: grid) {
+  .page-footer {
+    grid-row: 3;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    flex-shrink: 0;
+  }
+}
