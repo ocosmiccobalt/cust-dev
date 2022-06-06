@@ -1,13 +1,11 @@
-@use "variables" as *;
+.page-header {
+  position: relative;
+
+  flex-shrink: 0;
+}
 
 @supports (display: grid) {
   .page-header {
     grid-row: 1;
-  }
-}
-
-@media (min-width: $tablet-width) {
-  .page-header {
-    flex-shrink: 0;
   }
 }
