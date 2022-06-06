@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $tablet-width: 48rem;
 $desktop-width: 75rem;
 
@@ -9,12 +11,13 @@ $latin-unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U
 
 $font-family: "Montserrat", "Verdana", sans-serif;
 
-$primary-color: #2f80ed;
-$primary-color-light: rgba($primary-color, 0.1);
-$primary-color-super-light: rgba($primary-color, 0.05);
+$primary-color: hsl(214, 84%, 56%);
+$primary-color-faded: color.change($primary-color, $alpha: 0.1);
+$primary-color-extra-faded: color.change($primary-color, $alpha: 0.05);
 
 $body-bg-color: #ffffff;
-$button-bg-color: #64e2cd;
+$button-bg-color: hsl(170, 68%, 64%);
+$button-border-color: color.change($button-bg-color, $alpha: 0.5);
 
 $section-heading-color: #000000;
-$ordinary-text-color: #636363;
+$text-color: #636363;
