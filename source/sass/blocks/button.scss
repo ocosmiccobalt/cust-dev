@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "variables" as *;
+
+.button {
+  display: inline-block;
+  max-width: 100%;
+  min-width: 3.5em;
+  min-height: 3.5em;
+  padding: 1.143em 1.286em;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.244;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: top;
+  color: $body-bg-color;
+
+  border: none;
+  border-radius: 3.571em;
+  background-color: $button-bg-color;
+
+  cursor: pointer;
+  transition: 0.3s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: color.adjust($button-bg-color, $saturation: 20%, $lightness: -44%);
+  }
+
+  &:focus {
+    outline: 0.286em solid color.adjust($button-bg-color, $lightness: -24%);
+    outline-offset: 0.143em;
+  }
+
+  &[disabled] {
+    background-color: color.change($button-bg-color, $saturation: 0%);
+  }
+}
+
+.button--intro {
+  min-width: 16em;
+
+  border: 1em solid $button-border-color;
+
+  background-clip: padding-box;
+
+  &:focus {
+    outline: 0.286em solid $body-bg-color;
+    outline-offset: 0;
+  }
+}
+
+.button--tariff-item {
+  min-width: 14em;
+}
+
+.button--register-form {
+  min-width: 20em;
+}
+
+@media (min-width: $desktop-width) {
+  .button--tariff-item {
+    min-width: 13.714em;
+  }
+
+  .button--register-form {
+    min-width: 18.5em;
+  }
+}
