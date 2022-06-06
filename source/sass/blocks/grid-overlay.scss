@@ -1,0 +1,84 @@
+@use "variables" as *;
+
+.grid-overlay::before {
+  content: "";
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  pointer-events: none;
+
+  --color: rgba(255, 0, 0, 0.2);
+  --sides: 70px;
+  --gutter: 20px;
+  --columns: 2;
+  --column-width: calc(
+    (100% - var(--gutter) * var(--columns)) / var(--columns)
+  );
+
+  border: solid transparent;
+  border-width: 0 calc(
+    var(--sides) - var(--gutter) / 2
+  );
+
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--gutter) / 2),
+    var(--color) calc(var(--gutter) / 2),
+    var(--color) calc(var(--column-width) + var(--gutter) / 2),
+    transparent calc(var(--column-width) + var(--gutter) / 2),
+    transparent calc(var(--column-width) + var(--gutter))
+  );
+
+  background-repeat: no-repeat;
+}
+
+.grid-overlay--no-sides::before {
+  right: auto;
+  left: 50%;
+
+  width: 125%;
+
+  transform: translateX(-50%);
+
+  --columns: 4;
+
+  border-width: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .grid-overlay::before {
+    --sides: 94px;
+    --columns: 6;
+  }
+
+  .grid-overlay--no-sides::before {
+    width: 104.166%;
+
+    --columns: 8;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .grid-overlay::before {
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    --sides: 15px;
+    --gutter: 30px;
+    --columns: 12;
+  }
+
+  .grid-overlay--no-sides::before {
+    right: 0;
+    left: 0;
+
+    width: auto;
+
+    transform: translateX(0);
+  }
+}
