@@ -1,0 +1,150 @@
+@use "variables" as *;
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.rating {
+  max-width: 100%;
+  min-width: 16.5em;
+  min-height: 16.5em;
+  padding: 3.214em 2.786em;
+
+  text-align: center;
+  color: $primary-color;
+
+  background-color: $body-bg-color;
+  background-image: radial-gradient(68.31% 68.31%, #f9fbff, #f2f6fe, #ebf2fd, #e5edfc, #dee9fc, #d7e5fb, #d1e2fa, #cadef9);
+  border-radius: 50%;
+  box-shadow: 0 0.714em 3.571em 0 rgba(119, 157, 255, 0.3);
+}
+
+.rating__text {
+  margin: 0;
+}
+
+.rating__value {
+  display: block;
+
+  font-weight: 700;
+  font-size: 2.429em;
+}
+
+.rating__caption {
+  line-height: 1.786;
+}
+
+.rating__company {
+  display: block;
+
+  font-weight: 700;
+}
+
+.rating__summary {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 1em;
+
+  font-size: 0.714em;
+  line-height: 1.8;
+  vertical-align: top;
+
+  list-style: none;
+  border-radius: 3.571em;
+
+  cursor: pointer;
+  transition: 0.3s ease-out;
+
+  &:focus {
+    font-weight: 700;
+    color: $section-heading-color;
+
+    box-shadow: 0.4em 0.4em 0.4em 0 $primary-color;
+    outline: none;
+  }
+
+  &::marker {
+    display: none;
+  }
+
+  &::after {
+    content: " →";
+
+    display: inline-block;
+    padding-left: 0.6em;
+
+    vertical-align: middle;
+
+    transition: transform 0.5s;
+  }
+}
+
+.rating__review {
+  box-sizing: border-box;
+}
+
+.rating__details[open] {
+  position: relative;
+
+  & > .rating__summary::after {
+    transform: rotate(-45deg);
+  }
+
+  & > .rating__summary ~ .rating__review {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+
+    max-width: 100%;
+    min-width: 16.5em;
+    margin: 0;
+    padding: 1em;
+
+    background-color: $body-bg-color;
+    border-radius: 0.3em;
+    box-shadow: 0 0.714em 3.571em 0 rgba(119, 157, 255, 0.3);
+
+    transform: translateX(-50%);
+    animation: sweep 0.5s ease-in-out;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .rating {
+    max-width: none;
+    width: 16.5em;
+  }
+
+  .rating__value {
+    margin-top: 0.265em;
+    margin-bottom: -0.206em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .rating__text {
+    line-height: 1.571;
+  }
+
+  .rating__value {
+    margin: 0;
+  }
+
+  .rating__caption {
+    line-height: 1.429;
+  }
+
+  .rating__company {
+    margin-bottom: 0.5em;
+  }
+
+  .rating__summary {
+    line-height: 2;
+  }
+}
