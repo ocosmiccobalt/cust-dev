@@ -41,11 +41,14 @@
   right: auto;
   left: 50%;
 
-  width: 125%;
+  --columns: 4;
+  --ratio: 320 / 260;
+
+  width: calc(
+    (100% - var(--gutter) * (var(--columns) - 1)) * var(--ratio) + var(--gutter) * var(--columns)
+  );
 
   transform: translateX(-50%);
-
-  --columns: 4;
 
   border-width: 0;
 }
@@ -57,9 +60,12 @@
   }
 
   .grid-overlay--no-sides::before {
-    width: 104.166%;
-
     --columns: 8;
+    --ratio: 640 / 628;
+
+    width: calc(
+      (100% - var(--gutter) * (var(--columns) - 1)) * var(--ratio) + var(--gutter) * var(--columns)
+    );
   }
 }
 
