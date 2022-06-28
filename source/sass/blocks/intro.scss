@@ -4,24 +4,43 @@
   position: relative;
 }
 
-.intro__bg {
+.intro__hero {
   position: absolute;
   z-index: -1;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  overflow: hidden;
-}
-
-.intro__hero-image {
-  position: absolute;
-  top: 0;
-  right: 0;
   left: 0;
 
   width: 100%;
+  height: 100%;
+
+  overflow-y: hidden;
+}
+
+.intro__illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(100% / #{$bg-hero-mobile-aspect-ratio});
+}
+
+.intro__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+@supports (aspect-ratio: 16 / 9) {
+  .intro__illustration {
+    height: auto;
+    padding-bottom: 0;
+    aspect-ratio: $bg-hero-mobile-aspect-ratio;
+  }
 }
 
 .intro__wrapper {
@@ -91,6 +110,17 @@
 }
 
 @media (min-width: $tablet-width) {
+  .intro__illustration {
+    padding-bottom: calc(100% / #{$bg-hero-tablet-aspect-ratio});
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .intro__illustration {
+      padding-bottom: 0;
+      aspect-ratio: $bg-hero-tablet-aspect-ratio;
+    }
+  }
+
   .intro__wrapper {
     flex-direction: row;
     flex-wrap: wrap;
@@ -160,6 +190,17 @@
 }
 
 @media (min-width: $desktop-width) {
+  .intro__illustration {
+    padding-bottom: calc(100% / #{$bg-hero-desktop-aspect-ratio});
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .intro__illustration {
+      padding-bottom: 0;
+      aspect-ratio: $bg-hero-desktop-aspect-ratio;
+    }
+  }
+
   .intro__inner {
     width: 50%;
     margin-left: 50%;
