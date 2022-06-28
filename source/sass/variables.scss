@@ -27,3 +27,5 @@ $button-border-color: color.change($button-bg-color, $alpha: 0.5);
 
 $section-heading-color: #000000;
 $text-color: #636363;
+
+$circle-shadow-color: color.change(hsl(223, 99%, 73%), $alpha: 0.3);

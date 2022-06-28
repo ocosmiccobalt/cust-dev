@@ -22,7 +22,7 @@
   background-color: $body-bg-color;
   background-image: radial-gradient(68.31% 68.31%, #f9fbff, #f2f6fe, #ebf2fd, #e5edfc, #dee9fc, #d7e5fb, #d1e2fa, #cadef9);
   border-radius: 50%;
-  box-shadow: 0 0.714em 3.571em 0 rgba(119, 157, 255, 0.3);
+  box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
 }
 
 .rating__text {
