@@ -1,0 +1,314 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.result {
+  position: relative;
+
+  padding-top: 7.714em;
+  padding-bottom: 6.5em;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: -3em;
+    bottom: -3em;
+
+    width: 100%;
+    height: calc(100% + 6em);
+
+    background-image: url("../img/shape-result-light-mobile.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@supports (clip-path: polygon(0% 0%, 100% 4.643em, 100% calc(100% - 4.214em), 0% 100%)) {
+  .result::before {
+    top: 0;
+    bottom: 0;
+
+    height: 100%;
+
+    background-image: none;
+    background-color: $primary-color-faded;
+    clip-path: polygon(0% 0%, 100% 4.643em, 100% calc(100% - 4.214em), 0% 100%);
+  }
+}
+
+.result__wrapper {
+  position: relative;
+
+  padding: 0 2.5%;
+  padding-top: 6.143em;
+
+  border-bottom: 1px solid transparent;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: -2em;
+    bottom: -2em;
+
+    width: 100%;
+    height: calc(100% + 4em);
+
+    background-image: url("../img/shape-result-blue-mobile.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@supports (clip-path: polygon(0% 0%, 100% 5.143em, 100% calc(100% - 3.929em), 0% 100%)) {
+  .result__wrapper::before {
+    top: 0;
+    bottom: 0;
+
+    height: 100%;
+
+    background-image: none;
+    background-color: $primary-color;
+    clip-path: polygon(0% 0%, 100% 5.143em, 100% calc(100% - 3.929em), 0% 100%);
+  }
+}
+
+.result__title {
+  margin: 0;
+  margin-bottom: 1.625em;
+
+  font-weight: 700;
+  font-size: 1.714em;
+  line-height: 1.25;
+  text-align: center;
+  color: $body-bg-color;
+}
+
+.result__list {
+  margin: 0;
+
+  @include reset-list();
+}
+
+.result__item {
+  margin-bottom: 0.714em;
+}
+
+@media (min-width: $tablet-width) {
+  .result {
+    padding-top: 5.929em;
+    padding-bottom: 5em;
+
+    &::before {
+      top: -2.357em;
+      bottom: -2.357em;
+
+      height: calc(100% + 4.714em);
+
+      background-image: url("../img/shape-result-light-tablet.svg");
+    }
+  }
+
+  @supports (clip-path: polygon(0% 0%, 100% 8.571em, 100% calc(100% - 7.357em), 0% 100%)) {
+    .result::before {
+      top: 0;
+      bottom: 0;
+
+      height: 100%;
+
+      background-image: none;
+      clip-path: polygon(0% 0%, 100% 8.571em, 100% calc(100% - 7.357em), 0% 100%);
+    }
+  }
+
+  .result__wrapper {
+    padding-top: 9em;
+    padding-right: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-left: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-bottom: 4.857em;
+
+    border-bottom: none;
+
+    &::before {
+      top: -1.5em;
+      bottom: -1.5em;
+
+      height: calc(100% + 3em);
+
+      background-image: url("../img/shape-result-blue-tablet.svg");
+    }
+  }
+
+  @supports (clip-path: polygon(0% 0%, 100% 9.571em, 100% calc(100% - 7.357em), 0% 100%)) {
+    .result__wrapper::before {
+      top: 0;
+      bottom: 0;
+
+      height: 100%;
+
+      background-image: none;
+      clip-path: polygon(0% 0%, 100% 9.571em, 100% calc(100% - 7.357em), 0% 100%);
+    }
+  }
+
+  .result__title {
+    width: 66%;
+    margin-bottom: 2.333em;
+
+    font-size: 2.143em;
+    text-align: left;
+  }
+
+  .result__list {
+    margin-bottom: 7.143em;
+  }
+
+  .result__item {
+    width: 97.586%;
+    margin-bottom: 1.857em;
+  }
+
+  @supports (display: grid) {
+    .result__wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 37fr) repeat(6, minmax(0, 40fr)) minmax(0, 37fr);
+      grid-column-gap: $mobile-gutter;
+
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .result__title {
+      grid-column: 2 / -2;
+      justify-self: start;
+    }
+
+    .result__list {
+      grid-column: 2 / -2;
+    }
+
+    .result__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .result {
+    padding-top: 4.5em;
+    padding-bottom: 5.214em;
+
+    &::before {
+      top: 0;
+      bottom: 0;
+
+      height: 100%;
+
+      background-image: url("../img/shape-result-light-desktop.svg");
+      background-size: auto 100%;
+      background-position: left center;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 4.5em;
+      bottom: 5.214em;
+
+      width: 100%;
+
+      background-image: url("../img/shape-result-blue-desktop.svg");
+      background-size: contain;
+      background-position: left center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @supports (clip-path: polygon(0% 0%, 100% 8.571em, 100% calc(100% - 7.357em), 0% 100%)) {
+    .result::before {
+      background-color: transparent;
+      clip-path: none;
+    }
+  }
+
+  .result__wrapper {
+    padding-top: 4.357em;
+    padding-left: calc(#{$desktop-gutter} / 2);
+    padding-right: calc(#{$desktop-gutter} / 2);
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+
+      background-image: none;
+    }
+  }
+
+  @supports (clip-path: polygon(0% 0%, 100% 9.571em, 100% calc(100% - 7.357em), 0% 100%)) {
+    .result__wrapper::before {
+      background-color: transparent;
+      clip-path: none;
+    }
+  }
+
+  .result__title {
+    margin-bottom: 1.6em;
+
+    font-size: 2.5em;
+  }
+
+  .result__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 0;
+  }
+
+  .result__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+    display: flex;
+
+    width: calc(50% - 1.286em);
+    margin-bottom: 2.929em;
+
+    &:last-child,
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @supports (display: grid) {
+    .result__wrapper {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .result__title {
+      grid-column: 1 / -1;
+    }
+
+    .result__list {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-column-gap: 2.571em;
+      grid-row-gap: 2.929em;
+    }
+
+    .result__item {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+}
+
