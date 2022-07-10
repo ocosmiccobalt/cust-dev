@@ -1,0 +1,135 @@
+@use "variables" as *;
+
+.trust-item {
+  padding: 1.429em 20.394%;
+  padding-right: 13.815%;
+
+  &::before {
+    content: "";
+
+    display: block;
+    height: 5em;
+    margin-bottom: 1.429em;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &--product::before {
+    width: 6.071em;
+
+    background-image: url("../img/icon-trust-bullhorn-group.svg");
+  }
+
+  &--lecture::before {
+    width: 5.929em;
+    margin-bottom: 1.786em;
+
+    background-image: url("../img/icon-trust-lecture-group.svg");
+  }
+
+  &--chat::before {
+    width: 6.786em;
+
+    background-image: url("../img/icon-trust-chat-group.svg");
+  }
+
+  &--school::before {
+    width: 6.714em;
+
+    background-image: url("../img/icon-trust-school-group.svg");
+  }
+}
+
+.trust-item__title {
+  margin: 0;
+  margin-bottom: 1.143em;
+
+  font-weight: 600;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $primary-color;
+}
+
+.trust-item__description {
+  margin: 0;
+
+  font-size: 1.143em;
+}
+
+@media (min-width: $tablet-width) {
+  .trust-item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 100%;
+    padding: $mobile-gutter calc(#{$mobile-gutter} / 2);
+
+    &--chat,
+    &--school {
+      padding-right: 14%;
+    }
+
+    &::before {
+      margin-bottom: 1.143em;
+    }
+
+    &--chat::before {
+      margin-bottom: 1.786em;
+    }
+
+    &--school::before {
+      margin-bottom: 1.786em;
+    }
+  }
+
+  .trust-item__title {
+    &--chat {
+      padding-right: 22%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .trust-item {
+    padding-right: 0;
+    padding-left: 0;
+
+    &::before {
+      margin-bottom: 2em;
+    }
+
+    &--product,
+    :nth-child(4n+1) > & {
+      padding-right: 15.41%;
+    }
+
+    &--lecture,
+    :nth-child(4n+2) > & {
+      padding-left: 15.41%;
+    }
+
+    &--chat,
+    :nth-child(4n+3) > & {
+      padding-left: 30.136%;
+    }
+
+    &--school,
+    :nth-child(4n+4) > & {
+      padding-left: 31.5%;
+    }
+  }
+
+  .trust-item__title {
+    margin-bottom: 0.563em;
+
+    font-size: 1.143em;
+
+    &--chat {
+      padding-right: 0;
+    }
+  }
+}
