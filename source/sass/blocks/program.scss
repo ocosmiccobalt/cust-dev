@@ -74,6 +74,14 @@
   background-size: 100% 0.071em;
   background-position: left bottom;
   background-repeat: no-repeat;
+
+  cursor: pointer;
+  transition: 0.3s ease-out;
+
+  &:focus {
+    outline-color: $primary-color;
+    outline-offset: 0.143em;
+  }
 }
 
 @supports (text-decoration: dashed underline) {
