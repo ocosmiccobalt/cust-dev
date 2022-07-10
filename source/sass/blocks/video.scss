@@ -1,0 +1,166 @@
+@use "sass:color";
+@use "variables" as *;
+
+.video {
+  position: relative;
+
+  height: 0;
+
+  &--trust {
+    padding-bottom: calc(100% / #{$img-trust-mobile-aspect-ratio});
+  }
+
+  &--includes {
+    padding-bottom: calc(100% / #{$img-includes-mobile-aspect-ratio});
+  }
+}
+
+@supports (aspect-ratio: 16 / 9) {
+  .video {
+    height: auto;
+    padding-bottom: 0;
+
+    &--trust {
+      aspect-ratio: $img-trust-mobile-aspect-ratio;
+    }
+
+    &--includes {
+      aspect-ratio: $img-includes-mobile-aspect-ratio;
+    }
+  }
+}
+
+.video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 0.714em;
+  background-color: #c4c4c4;
+
+  &:focus {
+    outline: 0.286em solid $primary-color;
+    outline-offset: 0.143em;
+  }
+}
+
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  border-radius: 0.714em;
+  object-fit: cover;
+}
+
+.video__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  display: none;
+  margin: auto;
+  padding: 0;
+  width: 4.375rem;
+  height: 4.375rem;
+
+  font-size: inherit;
+
+  border: none;
+  border-radius: 50%;
+  background-color: color.change($primary-color, $alpha: 0.5);
+
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.video:hover .video__button,
+.video__button:focus {
+  background-color: color.change($body-bg-color, $alpha: 0.5);
+}
+
+.video__button:focus {
+  outline: 0.286em solid $primary-color;
+  outline-offset: 0.143em;
+}
+
+.video__play-icon {
+  position: absolute;
+  top: 0;
+  left: 0.375rem;
+  bottom: 0;
+  right: 0;
+
+  margin: auto;
+  width: 1.188rem;
+  height: 2.125rem;
+
+  fill: $body-bg-color;
+}
+
+.video:hover .video__play-icon,
+.video__button:focus .video__play-icon {
+  fill: $primary-color;
+}
+
+.video--enabled {
+  cursor: pointer;
+
+  & .video__button {
+    display: block;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .video {
+    &--trust {
+      padding-bottom: calc(100% / #{$img-trust-tablet-aspect-ratio});
+    }
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .video {
+      &--trust {
+        padding-bottom: 0;
+
+        aspect-ratio: $img-trust-tablet-aspect-ratio;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .video {
+    &--trust {
+      padding-bottom: calc(100% / #{$img-trust-desktop-aspect-ratio});
+    }
+
+    &--includes {
+      padding-bottom: calc(100% / #{$img-includes-desktop-aspect-ratio});
+    }
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .video {
+      padding-bottom: 0;
+
+      &--trust {
+        aspect-ratio: $img-trust-desktop-aspect-ratio;
+      }
+
+      &--includes {
+        aspect-ratio: $img-includes-desktop-aspect-ratio;
+      }
+    }
+  }
+}
