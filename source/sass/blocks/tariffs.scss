@@ -1,0 +1,215 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.tariffs__wrapper {
+  padding: 4em 6.25% 1.929em;
+
+  background-image: url("../img/shape-price-light-mobile.svg");
+  background-size: 100% auto;
+  background-position: 0 25.523%;
+  background-repeat: no-repeat;
+}
+
+.tariffs__title {
+  margin: 0;
+  margin-bottom: 1.75em;
+
+  font-weight: 700;
+  font-size: 1.714em;
+  line-height: 1.25;
+  text-align: center;
+  color: $section-heading-color;
+}
+
+.tariffs__list {
+  margin: 0;
+
+  @include reset-list();
+}
+
+.tariffs__item {
+  display: flex;
+
+  min-height: 12.208em;
+  margin-bottom: 0.714em;
+}
+
+@media (min-width: $tablet-width) {
+  .tariffs__wrapper {
+    position: relative;
+
+    padding-top: 5.071em;
+    padding-right: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-left: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-bottom: 1.429em;
+
+    background-image: url("../img/shape-price-light-tablet.svg");
+    background-size: 88.02% auto;
+    background-position: center 70.285%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      top: -3.286em;
+      right: -2.643em;
+
+      width: 10.786em;
+      height: 10.786em;
+
+      background-color: $body-bg-color;
+      background-image: radial-gradient(68.31% 68.31%, #ffffff, #f8fafe, #f0f5fd, #e9f1fd, #e1ecfc, #d9e7fb, #d2e3fa, #cadef9);
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
+      filter: blur(1.429em);
+    }
+  }
+
+  .tariffs__title {
+    margin-bottom: 2.1em;
+
+    font-size: 2.143em;
+  }
+
+  .tariffs__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .tariffs__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: calc(50% - #{$mobile-gutter} / 2);
+    margin-bottom: 2.143em;
+  }
+
+  @supports (display: grid) {
+    .tariffs__wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 37fr) repeat(6, minmax(0, 40fr)) minmax(0, 37fr);
+      grid-column-gap: $mobile-gutter;
+
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .tariffs__title {
+      grid-column: 2 / -2;
+
+      max-width: 100%;
+    }
+
+    .tariffs__list {
+      grid-column: 2 / -2;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-column-gap: $mobile-gutter;
+    }
+
+    .tariffs__item {
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .tariffs__wrapper {
+    padding-left: calc(#{$desktop-gutter} / 2);
+    padding-right: calc(#{$desktop-gutter} / 2);
+    padding-top: 6.143em;
+    padding-bottom: 2em;
+
+    background-image: url("../img/shape-price-light-desktop.svg");
+    background-size: 62.5% auto;
+    background-position: 58.222% 49.346%;
+
+    &::before {
+      top: -2.786em;
+      right: -11.714em;
+
+      width: 16.5em;
+      height: 16.5em;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      left: -12.857em;
+      bottom: -1.429em;
+
+      width: 10.071em;
+      height: 10.071em;
+
+      background-color: $body-bg-color;
+      background-image: radial-gradient(68.31% 68.31%, #6aaaff, #62a4fd, #5a9efa, #5298f8, #4a92f5, #418cf3, #3986f0, #2f80ed);
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
+      filter: blur(0.714em);
+    }
+  }
+
+  .tariffs__title {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2.067em;
+  }
+
+  .tariffs__list {
+    justify-content: center;
+
+    width: 85.47%;
+    margin: 0 auto;
+  }
+
+  .tariffs__item {
+    width: 27.1%;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 3.071em;
+
+    &--wide {
+      width: 57%;
+      min-height: 11.429em;
+      margin-left: 21.5%;
+      margin-right: 21.5%;
+    }
+  }
+
+  @supports (display: grid) {
+    .tariffs__wrapper {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tariffs__title {
+      grid-column: 1;
+    }
+
+    .tariffs__list {
+      grid-column: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 27.1%));
+      grid-column-gap: 3em;
+    }
+
+    .tariffs__item {
+      width: auto;
+      margin-left: 0;
+      margin-right: 0;
+
+      &--wide {
+        grid-column: 1 / -1;
+        justify-self: center;
+
+        width: 40.714em;
+      }
+    }
+  }
+}
