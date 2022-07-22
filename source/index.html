@@ -281,57 +281,68 @@
         <div class="reviews__wrapper wrapper">
           <h2 class="reviews__title">Отзывы</h2>
           <ul class="reviews__list" role="list">
-            <li class="reviews__item reviews-item">
-              <p class="reviews-item__name">Иван Матвейчук</p>
-              <blockquote class="reviews-item__blockquote">
-                <p>Куча интерактива, живая подача, небольшое шоу — Леша хорошо удерживает внимание и даёт не просто информацию, а разрабатывает (насколько это возможно за это время) именно скилл.</p>
-              </blockquote>
-              <p class="reviews-item__avatar">
+            <li class="reviews__item review-item">
+              <div class="review-item__inner">
+                <p class="review-item__name">Иван Матвейчук</p>
+                <blockquote class="review-item__blockquote">
+                  <p class="review-item__text">Куча интерактива, живая подача, небольшое шоу — Леша хорошо удерживает внимание и даёт не просто информацию, а разрабатывает (насколько это возможно за это время) именно скилл.</p>
+                </blockquote>
+              </div>
+              <p class="review-item__avatar">
                 <picture>
-                  <source type="image/avif" srcset="img/img-reviews-ivan-round@1x.avif 1x, img/img-reviews-ivan-round@2x.avif 2x">
+                  <source type="image/avif" srcset="img/img-reviews-ivan@1x.avif 1x, img/img-reviews-ivan@2x.avif 2x">
 
-                  <source type="image/webp" srcset="img/img-reviews-ivan-round@1x.webp 1x, img/img-reviews-ivan-round@2x.webp 2x">
+                  <source type="image/webp" srcset="img/img-reviews-ivan@1x.webp 1x, img/img-reviews-ivan@2x.webp 2x">
 
-                  <img class="reviews-item__image" src="img/img-reviews-ivan-round@1x.png" srcset="img/img-reviews-ivan-round@2x.png 2x" alt="Иван Матвейчук.">
+                  <img class="review-item__image review-item__image--ivan" src="img/img-reviews-ivan@1x.jpg" srcset="img/img-reviews-ivan@2x.jpg 2x" alt="Иван Матвейчук.">
                 </picture>
               </p>
             </li>
-            <li class="reviews__item reviews-item">
-              <p class="reviews-item__name">Сергей Конев</p>
-              <blockquote class="reviews-item__blockquote">
-                <p>Дизайнеру важно уметь общаться с клиентами: искать боли, находить настоящую мотивацию, чтобы придумывать гипотезы и внедрять их, или создавать новые продукты. Чтобы этому научиться, я пошел на курс по <span lang="en">Сustomer Development</span>. Курс состоит из 4 занятий. На каждом занятии мы проходили теорию и сразу же закрепляли её на практике, и, конечно же, получали объемную домашку. По итогу курса у меня стала формироваться картина о том, что делать дальше. </p>
-              </blockquote>
-              <p class="reviews-item__avatar">
+            <li class="reviews__item reviews__item--long review-item">
+              <div class="review-item__inner">
+                <p class="review-item__name">Сергей Конев</p>
+                <blockquote class="review-item__blockquote review-item__blockquote--sergey">
+                  <p class="review-item__text">Дизайнеру важно уметь общаться с клиентами: искать боли, находить настоящую мотивацию, чтобы придумывать гипотезы и внедрять их, или создавать новые продукты. Чтобы этому научиться, я пошел на курс по <span lang="en">Сustomer Development</span>. Курс состоит из 4 занятий. На каждом занятии мы проходили теорию и сразу же закрепляли её на практике, и, конечно же, получали объемную домашку. По итогу курса у меня стала формироваться картина о том, что делать дальше.</p>
+                </blockquote>
+              </div>
+              <p class="review-item__avatar">
                 <picture>
-                  <source type="image/avif" srcset="img/img-reviews-sergey-round@1x.avif 1x, img/img-reviews-sergey-round@2x.avif 2x">
+                  <source type="image/avif" srcset="img/img-reviews-sergey@1x.avif 1x, img/img-reviews-sergey@2x.avif 2x">
 
-                  <source type="image/webp" srcset="img/img-reviews-sergey-round@1x.webp 1x, img/img-reviews-sergey-round@2x.webp 2x">
+                  <source type="image/webp" srcset="img/img-reviews-sergey@1x.webp 1x, img/img-reviews-sergey@2x.webp 2x">
 
-                  <img class="reviews-item__image" src="img/img-reviews-sergey-round@1x.png" srcset="img/img-reviews-sergey-round@2x.png 2x" alt="Сергей Конев.">
+                  <img class="review-item__image review-item__image--sergey" src="img/img-reviews-sergey@1x.jpg" srcset="img/img-reviews-sergey@2x.jpg 2x" alt="Сергей Конев.">
                 </picture>
               </p>
             </li>
-            <li class="reviews__item reviews-item">
-              <p class="reviews-item__name">Екатерина Cиванова</p>
-              <blockquote class="reviews-item__blockquote">
-                <p><span lang="en">Custdev</span> это про обратную связь и выход из зоны комфорта, а этого никто не любит. Куда приятнее уютно пилить фичи. Леша рассказал кучу всяких хаков того, как делать custdev постоянно, не тратя на это уйму сил. Советую.</p>
-              </blockquote>
-              <p class="reviews-item__avatar">
+            <li class="reviews__item reviews__item--mt review-item">
+              <div class="review-item__inner">
+                <p class="review-item__name">Екатерина Cиванова</p>
+                <blockquote class="review-item__blockquote review-item__blockquote--ekaterina">
+                  <p class="review-item__text"><span lang="en">Custdev</span> это про обратную связь и выход из зоны комфорта, а этого никто не любит. Куда приятнее уютно пилить фичи. Леша рассказал кучу всяких хаков того, как делать custdev постоянно, не тратя на это уйму сил. Советую.</p>
+                </blockquote>
+              </div>
+              <p class="review-item__avatar">
                 <picture>
-                  <source type="image/avif" srcset="img/img-reviews-ekaterina-round@1x.avif 1x, img/img-reviews-ekaterina-round@2x.avif 2x">
+                  <source type="image/avif" srcset="img/img-reviews-ekaterina@1x.avif 1x, img/img-reviews-ekaterina@2x.avif 2x">
 
-                  <source type="image/webp" srcset="img/img-reviews-ekaterina-round@1x.webp 1x, img/img-reviews-ekaterina-round@2x.webp 2x">
+                  <source type="image/webp" srcset="img/img-reviews-ekaterina@1x.webp 1x, img/img-reviews-ekaterina@2x.webp 2x">
 
-                  <img class="reviews-item__image" src="img/img-reviews-ekaterina-round@1x.png" srcset="img/img-reviews-ekaterina-round@2x.png 2x" alt="Екатерина Cиванова.">
+                  <img class="review-item__image review-item__image--ekaterina" src="img/img-reviews-ekaterina@1x.jpg" srcset="img/img-reviews-ekaterina@2x.jpg 2x" alt="Екатерина Cиванова.">
                 </picture>
               </p>
             </li>
           </ul>
-          <figure class="reviews__figure">
-            <p>Рассказ о курсе от дизайнера <span lang="en">market.ru</span></p>
-            <details class="reviews__details">
-              <summary class="reviews__summary">Читать</summary>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aperiam deserunt velit accusantium quas delectus dolore quasi reprehenderit perferendis quibusdam!</p>
+          <figure class="reviews__figure review-figure">
+            <p class="review-figure__description">Рассказ о курсе от дизайнера <span lang="en">market.ru</span></p>
+            <details class="review-figure__details">
+              <summary class="review-figure__summary">Читать</summary>
+              <div class="review-figure__more">
+                <p class="review-figure__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quae, porro sit ullam ea, unde? Optio doloremque sint nobis sit, quasi adipisci quibusdam qui autem reprehenderit impedit, cum non beatae quaerat quisquam!</p>
+                <p class="review-figure__text">Quam sed harum accusamus ipsa corporis, quasi adipisci quibusdam labore necessitatibus amet praesentium voluptates numquam officiis repudiandae laboriosam? Quam quia incidunt quas molestias aperiam dicta deleniti at eos atque, consectetur totam?</p>
+                <p class="review-figure__text">Aperiam voluptatum nam autem unde, fugiat consectetur nemo porro doloribus inventore possimus laboriosam quaerat. Laborum vero, commodi!</p>
+                <p class="review-figure__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aperiam deserunt velit accusantium quas delectus dolore quasi reprehenderit perferendis quibusdam!</p>
+              </div>
             </details>
           </figure>
         </div>
