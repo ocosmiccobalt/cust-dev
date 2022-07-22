@@ -1,0 +1,129 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.past__wrapper {
+  padding-top: 2.643em;
+}
+
+.past__title {
+  margin: 0;
+  margin-bottom: 1.25em;
+  padding: 0 2.5%;
+
+  font-weight: 700;
+  font-size: 1.714em;
+  line-height: 1.25;
+  text-align: center;
+  color: $section-heading-color;
+}
+
+.past__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin: 0;
+
+  @include reset-list();
+}
+
+.past__item {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  width: 49.375%;
+  margin-bottom: 1.875%;
+}
+
+.past__illustration {
+  position: relative;
+
+  height: 0;
+  margin: 0;
+  padding-bottom: calc(100% / #{$img-past-mobile-aspect-ratio});
+}
+
+@supports (aspect-ratio: 16 / 9) {
+  .past__illustration {
+    height: auto;
+    padding-bottom: 0;
+
+    aspect-ratio: $img-past-mobile-aspect-ratio;
+  }
+}
+
+.past__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .past__wrapper {
+    padding-top: 5.5em;
+  }
+
+  .past__title {
+    margin-bottom: 2em;
+    padding-right: $tablet-side-column-width;
+    padding-left: $tablet-side-column-width;
+
+    font-size: 2.143em;
+  }
+
+  .past__item {
+    width: 24.349%;
+    margin-bottom: 0.781%;
+  }
+
+  .past__illustration {
+    padding-bottom: calc(100% / #{$img-past-tablet-aspect-ratio});
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .past__illustration {
+      padding-bottom: 0;
+
+      aspect-ratio: $img-past-tablet-aspect-ratio;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .past__wrapper {
+    padding-top: 4.929em;
+  }
+
+  .past__title {
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-bottom: 2.067em;
+    padding-left: calc(#{$desktop-gutter} / 2);
+    padding-right: calc(#{$desktop-gutter} / 2);
+  }
+
+  .past__list {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  .past__item {
+    width: 23.68%;
+    margin-bottom: 1.597%;
+  }
+
+  .past__illustration {
+    padding-bottom: calc(100% / #{$img-past-desktop-aspect-ratio});
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .past__illustration {
+      padding-bottom: 0;
+
+      aspect-ratio: $img-past-desktop-aspect-ratio;
+    }
+  }
+}
