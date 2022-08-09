@@ -82,6 +82,13 @@
 
   cursor: pointer;
   transition: 0.3s ease-out;
+
+  &--includes {
+    bottom: 0.313rem;
+
+    width: 3.125rem;
+    height: 3.125rem;
+  }
 }
 
 .video:hover .video__button,

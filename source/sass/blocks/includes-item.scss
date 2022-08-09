@@ -1,0 +1,206 @@
+@use "sass:color";
+@use "variables" as *;
+
+.includes-item {
+  flex-shrink: 0;
+  flex-basis: auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 25em;
+  padding-top: 3.071em;
+  padding-right: 7.092%;
+  padding-bottom: 2.071em;
+  padding-left: 18.085%;
+
+  background-color: $body-bg-color;
+  box-shadow: 0 1.429em 3.571em 0 color.adjust($primary-color, $hue: 24, $alpha: -0.88);
+  border-radius: 0.714em;
+
+  &::before {
+    content: "";
+
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: flex-start;
+
+    display: block;
+    margin-bottom: auto;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--manual::before {
+    width: 11.929em;
+    height: 9.714em;
+
+    background-image: url("../img/icon-includes-manual@1x.png");
+    background-position: -0.643em 100%;
+
+    /* stylelint-disable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+    background-image: -webkit-image-set(
+      url("../img/icon-includes-manual@2x.png") 2x,
+      url("../img/icon-includes-manual@1x.png") 1x
+    );
+
+    background-image: image-set(
+      url("../img/icon-includes-manual@2x.avif") type("image/avif") 2x,
+      url("../img/icon-includes-manual@1x.avif") type("image/avif") 1x,
+      url("../img/icon-includes-manual@2x.webp") type("image/webp") 2x,
+      url("../img/icon-includes-manual@1x.webp") type("image/webp") 1x,
+      url("../img/icon-includes-manual@2x.png") 2x,
+      url("../img/icon-includes-manual@1x.png") 1x
+    );
+    /* stylelint-enable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+  }
+
+  &--book::before {
+    width: 5.714em;
+    height: 5.714em;
+
+    background-image: url("../img/icon-includes-book@1x.png");
+
+    /* stylelint-disable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+    background-image: -webkit-image-set(
+      url("../img/icon-includes-book@2x.png") 2x,
+      url("../img/icon-includes-book@1x.png") 1x
+    );
+
+    background-image: image-set(
+      url("../img/icon-includes-book@2x.avif") type("image/avif") 2x,
+      url("../img/icon-includes-book@1x.avif") type("image/avif") 1x,
+      url("../img/icon-includes-book@2x.webp") type("image/webp") 2x,
+      url("../img/icon-includes-book@1x.webp") type("image/webp") 1x,
+      url("../img/icon-includes-book@2x.png") 2x,
+      url("../img/icon-includes-book@1x.png") 1x
+    );
+    /* stylelint-enable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+  }
+
+  &--chat::before {
+    width: 5.143em;
+    height: 5.143em;
+
+    background-image: url("../img/icon-includes-smile@1x.png");
+
+    /* stylelint-disable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+    background-image: -webkit-image-set(
+      url("../img/icon-includes-smile@2x.png") 2x,
+      url("../img/icon-includes-smile@1x.png") 1x
+    );
+
+    background-image: image-set(
+      url("../img/icon-includes-smile@2x.avif") type("image/avif") 2x,
+      url("../img/icon-includes-smile@1x.avif") type("image/avif") 1x,
+      url("../img/icon-includes-smile@2x.webp") type("image/webp") 2x,
+      url("../img/icon-includes-smile@1x.webp") type("image/webp") 1x,
+      url("../img/icon-includes-smile@2x.png") 2x,
+      url("../img/icon-includes-smile@1x.png") 1x
+    );
+    /* stylelint-enable declaration-block-no-duplicate-properties, value-no-vendor-prefix */
+  }
+
+  &--with-media {
+    padding-top: 4em;
+    padding-right: 10.992%;
+    padding-left: 10.992%;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.includes-item__title {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin: 0;
+  margin-bottom: 1em;
+
+  font-weight: 600;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $primary-color;
+
+  &--with-media {
+    margin-left: 9.09%;
+  }
+}
+
+.includes-item__description {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin: 0;
+}
+
+.includes-item__video {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: -1;
+
+  margin: 0 9.09%;
+  margin-bottom: 2.214em;
+}
+
+@media (min-width: $tablet-width) {
+  .includes-item {
+    padding-top: 4em;
+
+    &--manual::before {
+      background-position: -0.643em 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .includes-item {
+    min-height: 15.643em;
+    padding-left: 15.6%;
+    padding-right: 11.463%;
+
+    &--manual,
+    &--book {
+      position: relative;
+
+      padding-left: 40.243%;
+    }
+
+    &--manual::before,
+    &--book::before {
+      position: absolute;
+      top: 4em;
+      left: 15.6%;
+
+      margin-bottom: 0;
+    }
+
+    &--with-media,
+    &--chat {
+      min-height: 23.286em;
+    }
+
+    &--with-media {
+      padding-left: 14.146%;
+      padding-right: 14.146%;
+    }
+  }
+
+  .includes-item__title {
+    &--with-media {
+      margin-left: 0;
+    }
+  }
+
+  .includes-item__video {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2.357em;
+  }
+}
