@@ -1,0 +1,67 @@
+@use "sass:color";
+@use "variables" as *;
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control__input {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: 2;
+
+  display: block;
+  width: 100%;
+  height: 3.571em;
+  padding: 1.071em 7.142% 1.071em;
+  padding-left: 14.285%;
+
+  font-weight: 500;
+  font-size: inherit;
+  line-height: 1.244;
+  color: $section-heading-color;
+
+  border: 0.071em solid color.change($primary-color, $alpha: 0.3);
+  background-color: $body-bg-color;
+
+  transition: 0.3s ease-out;
+
+  &::placeholder {
+    color: $placeholder-color;
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $primary-color;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: $primary-color;
+  }
+
+  &:focus {
+    outline: 0.286em solid $button-bg-color;
+    outline-offset: 0.143em;
+  }
+}
+
+.form-control__label {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: 1;
+
+  display: block;
+  width: 100%;
+  padding: 1.071em 7.142% 0.571em;
+  padding-left: 14.285%;
+
+  font-weight: 500;
+  font-size: inherit;
+  line-height: inherit;
+  color: $section-heading-color;
+
+  border: 0.071em solid transparent;
+}
