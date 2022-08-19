@@ -3,7 +3,6 @@
 
 .button {
   display: inline-block;
-  max-width: 100%;
   min-width: 3.5em;
   min-height: 3.5em;
   padding: 1.143em 1.286em;
@@ -41,8 +40,6 @@
 }
 
 .button--intro {
-  min-width: 16em;
-
   border: 1em solid $button-border-color;
 
   background-clip: padding-box;
@@ -50,23 +47,5 @@
   &:focus {
     outline: 0.286em solid $body-bg-color;
     outline-offset: 0;
-  }
-}
-
-.button--tariff-item {
-  min-width: 14em;
-}
-
-.button--register-form {
-  min-width: 20em;
-}
-
-@media (min-width: $desktop-width) {
-  .button--tariff-item {
-    min-width: 13.714em;
-  }
-
-  .button--register-form {
-    min-width: 18.5em;
   }
 }

@@ -109,6 +109,8 @@
   flex-shrink: 0;
   flex-basis: auto;
   align-self: flex-start;
+
+  width: 16em;
 }
 
 @media (min-width: $tablet-width) {

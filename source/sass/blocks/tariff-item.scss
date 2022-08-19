@@ -51,6 +51,8 @@
   flex-shrink: 0;
   flex-basis: auto;
   align-self: center;
+
+  width: 14em;
 }
 
 .tariff-item__badge {
@@ -130,6 +132,8 @@
   }
 
   .tariff-item__button {
+    width: 13.714em;
+
     .tariff-item--wide & {
       align-self: flex-start;
 
