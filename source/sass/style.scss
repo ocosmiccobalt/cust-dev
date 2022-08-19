@@ -1,6 +1,7 @@
 @use "normalize";
 @use "scaffolding";
 @use "blocks/audience";
+@use "blocks/aux-city-list";
 @use "blocks/button";
 @use "blocks/flex-page";
 @use "blocks/form-control";
@@ -8,6 +9,7 @@
 @use "blocks/includes-item";
 @use "blocks/includes";
 @use "blocks/intro";
+@use "blocks/legal-list";
 @use "blocks/page-footer";
 @use "blocks/page-header";
 @use "blocks/page-main";

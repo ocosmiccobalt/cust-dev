@@ -1,0 +1,64 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.legal-list {
+  @include reset-list();
+}
+
+.legal-list__item {
+  text-align: center;
+}
+
+.legal-list__link {
+  display: inline-block;
+  padding: 0.286em 1.5em;
+
+  line-height: 1.196;
+  text-decoration: none;
+  vertical-align: top;
+  color: inherit;
+
+  cursor: pointer;
+  transition: 0.3s ease-out;
+
+  &:focus {
+    outline-color: $body-bg-color;
+    outline-offset: 0.143em;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .legal-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .legal-list__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    text-align: left;
+  }
+
+  .legal-list__link {
+    max-width: 26.286em;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .legal-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .legal-list__link {
+    padding: 1em 1.714em;
+
+    .legal-list__item:last-child & {
+      padding-right: 0;
+    }
+  }
+}

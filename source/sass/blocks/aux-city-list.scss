@@ -1,0 +1,69 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.aux-city-list {
+  @include reset-list();
+}
+
+.aux-city-list__item {
+  padding: 0 6.25%;
+
+  text-align: center;
+}
+
+.aux-city-list__link {
+  display: inline-block;
+  padding: 0.571em 1.5em;
+
+  line-height: 1.196;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: top;
+  color: inherit;
+
+  &--current {
+    font-weight: 700;
+  }
+
+  &[href] {
+    cursor: pointer;
+    transition: 0.3s ease-out;
+  }
+
+  &:focus {
+    outline-color: $body-bg-color;
+    outline-offset: 0.143em;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .aux-city-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .aux-city-list__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    padding: 0;
+
+    text-align: left;
+  }
+
+  .aux-city-list__link {
+    max-width: 12.286em;
+    padding: 1.143em 0.929em 0.643em;
+
+    .aux-city-list__item:first-child & {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .aux-city-list__link {
+    max-width: 19.286em;
+  }
+}
