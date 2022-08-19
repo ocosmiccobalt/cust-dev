@@ -1,0 +1,168 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.register {
+  background-color: $primary-color-extra-faded;
+}
+
+.register__form {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 7.714em 6.25% 6.714em;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -3.929em;
+    left: -2.857em;
+
+    width: 7.857em;
+    height: 7.857em;
+
+    @include decorate-circle($color: #ffffff, $shadow: true, $blur: 1.429em, $opacity: 1);
+  }
+}
+
+.register__control {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 1.429em;
+
+  &:last-of-type {
+    margin-bottom: 2.857em;
+  }
+}
+
+.register__button {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
+
+  width: 20em;
+}
+
+@media (min-width: $tablet-width) {
+  .register__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-right: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-left: calc(#{$tablet-side-column-width} + #{$mobile-gutter});
+    padding-bottom: 8.357em;
+
+    &::before {
+      top: -7.571em;
+
+      width: 12.286em;
+      height: 12.286em;
+    }
+  }
+
+  .register__control {
+    width: calc(50% - #{$mobile-gutter} / 2);
+    max-width: none;
+    margin-bottom: 1.143em;
+
+    &:last-of-type {
+      margin-bottom: 1.143em;
+    }
+  }
+
+  .register__button {
+    align-self: flex-end;
+
+    width: calc(50% - #{$mobile-gutter} / 2);
+    max-width: 20em;
+    margin-left: auto;
+    margin-bottom: 1.143em;
+  }
+
+  @supports (display: grid) {
+    .register {
+      display: grid;
+      grid-template-columns: minmax(0, 37fr) repeat(6, minmax(0, 40fr)) minmax(0, 37fr);
+      grid-column-gap: $mobile-gutter;
+    }
+
+    .register__form {
+      grid-column: 2 / -2;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-column-gap: $mobile-gutter;
+
+      padding-left: 0;
+      padding-right: 0;
+
+      &::before {
+        left: -9.571em;
+      }
+    }
+
+    .register__control {
+      width: auto;
+    }
+
+    .register__button {
+      justify-self: end;
+      align-self: end;
+
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .register__form {
+    justify-content: flex-start;
+
+    padding-top: 6.571em;
+    padding-left: calc(#{$desktop-gutter} / 2);
+    padding-right: calc(#{$desktop-gutter} / 2);
+    padding-bottom: 4.857em;
+
+    &::before {
+      left: -10.5em;
+    }
+  }
+
+  .register__control {
+    width: 23%;
+    margin-right: 2.564%;
+  }
+
+  .register__button {
+    width: 22.136%;
+    max-width: none;
+  }
+
+  @supports (display: grid) {
+    .register {
+      display: block;
+    }
+
+    .register__form {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-column-gap: $desktop-gutter;
+    }
+
+    .register__control {
+      width: auto;
+      margin-right: 0;
+    }
+
+    .register__button {
+      width: 100%;
+      max-width: 18.5em;
+    }
+  }
+}
