@@ -585,22 +585,20 @@
 
       <section class="register">
         <h2 class="visually-hidden" id="register-form-label">Запись на курс</h2>
-        <form class="register__form register-form" action="#" method="post" aria-labelledby="register-form-label">
-          <ul class="register-form__list" role="list">
-            <li class="register-form__item">
-              <input class="register-form__input" type="text" name="name" id="name-field" placeholder="Имя" required>
-              <label class="register-form__label" for="name-field">Имя:</label>
-            </li>
-            <li class="register-form__item">
-              <input class="register-form__input" type="tel" name="tel" id="tel-field" placeholder="Телефон" required>
-              <label class="register-form__label" for="tel-field">Телефон:</label>
-            </li>
-            <li class="register-form__item">
-              <input class="register-form__input" type="email" name="email" id="email-field" placeholder="E-mail" required>
-              <label class="register-form__label" for="email-field">E-mail:</label>
-            </li>
-          </ul>
-          <button class="register-form__button button button--register-form" type="submit" name="register-submit">
+        <form class="register__form wrapper" action="#" method="post" aria-labelledby="register-form-label">
+          <p class="register__control form-control">
+            <input class="form-control__input" type="text" name="name" id="name-field" placeholder="Имя" required>
+            <label class="form-control__label" for="name-field">Имя:</label>
+          </p>
+          <p class="register__control form-control">
+            <input class="form-control__input" type="tel" name="tel" id="tel-field" placeholder="Телефон" required>
+            <label class="form-control__label" for="tel-field">Телефон:</label>
+          </p>
+          <p class="register__control form-control">
+            <input class="form-control__input" type="email" name="email" id="email-field" placeholder="E-mail" required>
+            <label class="form-control__label" for="email-field">E-mail:</label>
+          </p>
+          <button class="register__button button" type="submit" name="register-submit">
             Записаться на курс
           </button>
         </form>
