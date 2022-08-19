@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .audience {
   background-image: url("../img/shape-to-whom-light-mobile.svg");
@@ -157,12 +158,7 @@
       width: 16.5em;
       height: 16.5em;
 
-      background-color: $body-bg-color;
-      background-image: radial-gradient(68.31% 68.31%, #ffffff, #f8fafe, #f0f5fd, #e9f1fd, #e1ecfc, #d9e7fb, #d2e3fa, #cadef9);
-      background-repeat: no-repeat;
-      border-radius: 50%;
-      box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
-      filter: blur(1.429em);
+      @include decorate-circle($color: #ffffff, $shadow: true, $blur: 1.429em, $opacity: 1);
     }
   }
 

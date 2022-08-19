@@ -192,12 +192,7 @@
       width: 6.357em;
       height: 6.357em;
 
-      background-color: $body-bg-color;
-      background-image: radial-gradient(68.31% 68.31%, #6aaaff, #62a4fd, #5a9efa, #5298f8, #4a92f5, #418cf3, #3986f0, #2f80ed);
-      background-repeat: no-repeat;
-      border-radius: 50%;
-      box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
-      filter: blur(0.714em);
+      @include decorate-circle($color: #6aaaff, $shadow: true, $blur: 0.714em, $opacity: 1);
     }
   }
 
@@ -313,12 +308,7 @@
       width: 8.929em;
       height: 8.929em;
 
-      background-color: $body-bg-color;
-      background-image: radial-gradient(68.31% 68.31%, #6aaaff, #62a4fd, #5a9efa, #5298f8, #4a92f5, #418cf3, #3986f0, #2f80ed);
-      background-repeat: no-repeat;
-      border-radius: 50%;
-      box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
-      opacity: 0.1;
+      @include decorate-circle($color: #6aaaff, $shadow: true, $blur: false, $opacity: 0.1);
     }
   }
 

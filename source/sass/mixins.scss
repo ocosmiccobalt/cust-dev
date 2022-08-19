@@ -9,3 +9,62 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+@mixin decorate-circle($color, $shadow: true, $blur: 1.429em, $opacity: 1) {
+  background-color: $body-bg-color;
+
+  @if $color == #ffffff {
+    background-image: radial-gradient(
+      68.31% 68.31%,
+      #ffffff,
+      #f8fafe,
+      #f0f5fd,
+      #e9f1fd,
+      #e1ecfc,
+      #d9e7fb,
+      #d2e3fa,
+      #cadef9
+    );
+  }
+
+  @else if $color == #6aaaff {
+    background-image: radial-gradient(
+      68.31% 68.31%,
+      #6aaaff,
+      #62a4fd,
+      #5a9efa,
+      #5298f8,
+      #4a92f5,
+      #418cf3,
+      #3986f0,
+      #2f80ed
+    );
+  }
+
+  @else if $color == #f9fbff {
+    background-image: radial-gradient(
+      68.31% 68.31%,
+      #f9fbff,
+      #f2f6fe,
+      #ebf2fd,
+      #e5edfc,
+      #dee9fc,
+      #d7e5fb,
+      #d1e2fa,
+      #cadef9
+    );
+  }
+
+  background-repeat: no-repeat;
+  border-radius: 50%;
+
+  @if $shadow {
+    box-shadow: 0 0.714em 3.571em 0 $circle-shadow-color;
+  }
+
+  @if $blur {
+    filter: blur($blur);
+  }
+
+  opacity: $opacity;
+}
