@@ -14,7 +14,10 @@
         "mixin",
         "include",
         "content",
-        "each"
+        "each",
+        "for",
+        "if",
+        "else"
       ]
     }],
     "number-max-precision": 3
