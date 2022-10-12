@@ -3,6 +3,7 @@
 @use "blocks/audience";
 @use "blocks/aux-city-list";
 @use "blocks/button";
+@use "blocks/city-list";
 @use "blocks/flex-page";
 @use "blocks/form-control";
 @use "blocks/grid-overlay";
@@ -10,6 +11,7 @@
 @use "blocks/includes";
 @use "blocks/intro";
 @use "blocks/legal-list";
+@use "blocks/main-nav";
 @use "blocks/page-footer";
 @use "blocks/page-header";
 @use "blocks/page-main";
@@ -22,6 +24,7 @@
 @use "blocks/review-figure";
 @use "blocks/review-item";
 @use "blocks/reviews";
+@use "blocks/site-list";
 @use "blocks/stats";
 @use "blocks/tariff-item";
 @use "blocks/tariffs";

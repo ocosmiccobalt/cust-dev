@@ -1,0 +1,238 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.city-list {
+  display: none;
+
+  @include reset-list();
+}
+
+.city-list__others {
+  margin: 0;
+
+  @include reset-list();
+}
+
+@media (min-width: $tablet-width) {
+  .city-list {
+    position: relative;
+
+    display: inline-block;
+    width: calc(
+      (100% - 2 * #{$tablet-side-column-width} - #{$mobile-gutter}) * 0.333 + #{$mobile-gutter} / 2 + #{$tablet-side-column-width}
+    );
+
+    vertical-align: top;
+  }
+
+  .city-list__item {
+    display: inline-block;
+    max-width: calc(100% - 4em);
+
+    vertical-align: top;
+
+    &--nested {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .city-list__link {
+    display: inline-block;
+    max-width: 100%;
+    min-height: 6.357em;
+    padding: 2.786em 0.429em 2.143em;
+    padding-left: 1.143em;
+
+    font-weight: 700;
+    vertical-align: top;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary-color;
+
+    background-color: $body-bg-color;
+
+    &[href] {
+      cursor: pointer;
+      transition: 0.3s ease-out;
+    }
+
+    &--nested {
+      display: block;
+      padding-right: 1.143em;
+
+      font-weight: 500;
+      color: $section-heading-color;
+    }
+
+    &--nested[href]:hover,
+    &--nested:focus {
+      background-color: $primary-color-faded;
+    }
+
+    &--nested:focus {
+      outline: 0.286em solid $primary-color;
+    }
+  }
+
+  .city-list__button {
+    position: relative;
+
+    display: inline-block;
+    width: 2.571em;
+    height: 6.357em;
+    padding: 0;
+
+    vertical-align: top;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    &:focus {
+      outline: 0.286em solid $primary-color;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      top: 1.357em;
+      bottom: 0.714em;
+      left: 0.429em;
+      right: 0.429em;
+
+      border-radius: 3.571em;
+      background-color: $body-bg-color;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2.214em;
+
+      width: 0.571em;
+      height: 0.571em;
+      margin: 0 auto;
+
+      border: 0.286em solid transparent;
+      border-top-color: $primary-color;
+    }
+
+    &--open::after {
+      bottom: 2.5em;
+
+      border-top-color: transparent;
+      border-bottom-color: $primary-color;
+    }
+
+    &--nojs {
+      display: none;
+    }
+  }
+
+  .city-list__others {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background-color: $body-bg-color;
+
+    &--nojs {
+      position: static;
+    }
+  }
+
+  .city-list__others:not(.city-list__others--nojs):not(.city-list__others--open) {
+    display: none;
+  }
+
+  @supports (display: grid) {
+    .city-list {
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .city-list {
+    position: static;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    width: 31.623%;
+  }
+
+  .city-list__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    max-width: none;
+  }
+
+  .city-list__link {
+    max-width: 11.429em;
+    min-height: 3em;
+    padding: 0.786em 0;
+    padding-right: 0.929em;
+
+    border-radius: 3.571em;
+
+    &--nested {
+      display: inline-block;
+      padding-left: 0.929em;
+
+      font-weight: 400;
+      color: $body-bg-color;
+
+      background-color: $primary-color;
+    }
+
+    &--nested[href]:hover,
+    &--nested:focus {
+      background-color: $primary-color;
+    }
+
+    &--nested:focus {
+      outline: 0.286em solid $button-bg-color;
+    }
+  }
+
+  .city-list__button {
+    display: none;
+  }
+
+  .city-list__others {
+    position: static;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    width: auto;
+
+    background-color: transparent;
+  }
+
+  .city-list__others:not(.city-list__others--nojs):not(.city-list__others--open) {
+    display: flex;
+  }
+
+  @supports (display: grid) {
+    .city-list {
+      width: auto;
+    }
+  }
+}
