@@ -21,38 +21,38 @@
       <nav class="main-nav main-nav--nojs">
         <ul class="main-nav__city-list city-list" role="list">
           <li class="city-list__item">
-            <a class="city-list__link city-list__link--current">Санкт-Петербург</a>
+            <a class="city-list__link">Санкт-Петербург</a>
           </li>
           <li class="city-list__item">
-            <button class="city-list__button" type="button" aria-controls="other-cities">
+            <button class="city-list__button city-list__button--nojs" type="button" aria-controls="other-cities">
               <span class="visually-hidden">Другие города</span>
             </button>
-            <ul class="city-list city-list--nested" id="other-cities" role="list">
-              <li class="city-list__item">
-                <a class="city-list__link" href="#">Москва</a>
+            <ul class="city-list__others city-list__others--nojs" id="other-cities" role="list">
+              <li class="city-list__item city-list__item--nested">
+                <a class="city-list__link city-list__link--nested" href="#">Москва</a>
               </li>
-              <li class="city-list__item">
-                <a class="city-list__link" href="#">Минск</a>
+              <li class="city-list__item city-list__item--nested">
+                <a class="city-list__link city-list__link--nested" href="#">Минск</a>
               </li>
             </ul>
           </li>
         </ul>
 
-        <button class="main-nav__toggle" type="button" aria-controls="site-list">
+        <button class="main-nav__toggle main-nav__toggle--nojs" type="button" aria-controls="site-list">
           <span class="visually-hidden">Меню</span>
         </button>
-        <ul class="main-nav__site-list site-list" id="site-list" role="list">
+        <ul class="main-nav__site-list site-list site-list--nojs" id="site-list" role="list">
           <li class="site-list__item">
-            <a class="site-list__link" href="#">Программа</a>
+            <a class="site-list__link" href="#program">Программа</a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__link" href="#">Отзывы</a>
+            <a class="site-list__link" href="#reviews">Отзывы</a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__link" href="#">Стоимость</a>
+            <a class="site-list__link" href="#tariffs">Стоимость</a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__link" href="#">О преподавателе</a>
+            <a class="site-list__link" href="#about-me">О преподавателе</a>
           </li>
         </ul>
 
@@ -154,7 +154,7 @@
         </div>
       </section>
 
-      <section class="program">
+      <section class="program" id="program">
         <div class="program__wrapper wrapper">
           <h2 class="program__title">Что будет на курсе</h2>
           <ul class="program__list" role="list">
@@ -217,7 +217,7 @@
         </div>
       </section>
 
-      <section class="trust">
+      <section class="trust" id="about-me">
         <div class="trust__wrapper wrapper">
           <h2 class="trust__title">Почему мне можно доверять</h2>
           <figure class="trust__illustration">
@@ -277,7 +277,7 @@
         </div>
       </section>
 
-      <section class="reviews">
+      <section class="reviews" id="reviews">
         <div class="reviews__wrapper wrapper">
           <h2 class="reviews__title">Отзывы</h2>
           <ul class="reviews__list" role="list">
@@ -492,7 +492,7 @@
         </div>
       </section>
 
-      <section class="tariffs">
+      <section class="tariffs" id="tariffs">
         <div class="tariffs__wrapper wrapper">
           <h2 class="tariffs__title">Стоимость для компаний</h2>
           <ul class="tariffs__list" role="list">
