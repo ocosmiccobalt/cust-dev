@@ -20,6 +20,12 @@
         "else"
       ]
     }],
+    "function-no-unknown": [true, {
+      "ignoreFunctions": [
+        "/^math/",
+        "/^color/"
+      ]
+    }],
     "number-max-precision": 3
   }
 }
