@@ -183,16 +183,17 @@
   }
 
   .city-list__link {
-    max-width: 11.429em;
+    max-width: 12.5em;
     min-height: 3em;
-    padding: 0.786em 0;
-    padding-right: 0.929em;
+    margin-left: -0.929em;
+    padding: 0.786em 0.929em;
 
     border-radius: 3.571em;
 
     &--nested {
       display: inline-block;
-      padding-left: 0.929em;
+      max-width: 11.429em;
+      margin-left: 0;
 
       font-weight: 400;
       color: $body-bg-color;
