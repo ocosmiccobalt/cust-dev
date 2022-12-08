@@ -47,6 +47,7 @@
 .rating__summary {
   box-sizing: border-box;
   display: inline-block;
+  max-width: 100%;
   padding: 0 1em;
 
   font-size: 0.714em;
@@ -62,8 +63,8 @@
   &:focus {
     font-weight: 700;
     color: $section-heading-color;
+    text-decoration: underline;
 
-    box-shadow: 0.4em 0.4em 0.4em 0 $primary-color;
     outline: none;
   }
 
@@ -77,6 +78,7 @@
     display: inline-block;
     padding-left: 0.6em;
 
+    font-weight: 700;
     vertical-align: middle;
 
     transition: transform 0.5s;
@@ -99,7 +101,7 @@
     bottom: 100%;
     left: 50%;
 
-    max-width: 100%;
+    width: 100%;
     min-width: 16.5em;
     margin: 0;
     padding: 1em;
