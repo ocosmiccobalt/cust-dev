@@ -129,7 +129,9 @@
   .audience {
     display: flex;
 
+    max-width: 90rem;
     min-height: 36.938rem;
+    margin: 0 auto;
 
     background-image: url("../img/shape-to-whom-light-desktop.svg");
     background-size: auto 100%;

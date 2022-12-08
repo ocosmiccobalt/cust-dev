@@ -2,23 +2,9 @@
 @use "mixins" as *;
 
 .reviews {
-  position: relative;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: url("../img/shape-reviews-light-mobile.svg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-  }
+  background-image: url("../img/shape-reviews-light-mobile.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .reviews__wrapper {
@@ -52,10 +38,8 @@
 
 @media (min-width: $tablet-width) {
   .reviews {
-    &::before {
-      background-image: url("../img/shape-reviews-light-tablet.svg");
-      background-size: 100% 100%;
-    }
+    background-image: url("../img/shape-reviews-light-tablet.svg");
+    background-size: 100% 100%;
   }
 
   .reviews__wrapper {
@@ -101,11 +85,12 @@
 
 @media (min-width: $desktop-width) {
   .reviews {
-    &::before {
-      background-image: url("../img/shape-reviews-light-desktop.svg");
-      background-size: auto 100%;
-      background-position: 100% 0;
-    }
+    max-width: 90rem;
+    margin: 0 auto;
+
+    background-image: url("../img/shape-reviews-light-desktop.svg");
+    background-size: auto 100%;
+    background-position: right top;
   }
 
   .reviews__wrapper {

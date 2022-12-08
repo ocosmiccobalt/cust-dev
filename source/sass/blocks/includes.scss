@@ -63,7 +63,7 @@
 
     background-image: url("../img/shape-includes-blue-tablet.svg");
     background-size: 93.5% 100%;
-    background-position: 100% 0;
+    background-position: right top;
   }
 
   .includes__title {
@@ -123,7 +123,9 @@
   .includes {
     position: relative;
 
+    max-width: 90rem;
     min-height: 78.143em;
+    margin: 0 auto;
     padding-top: 6.643em;
 
     background-image: url("../img/shape-includes-light-desktop.svg");

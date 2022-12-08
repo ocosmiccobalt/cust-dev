@@ -4,34 +4,22 @@
 .review-item__inner {
   position: relative;
 
-  margin-bottom: 1.071em;
+  margin-bottom: 2.143em;
   padding-top: 2.857em;
   padding-right: 6.25%;
-  padding-bottom: 1.071em;
+  padding-bottom: 2.929em;
   padding-left: 16.776%;
 
-  &::before {
-    content: "";
-
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    bottom: 1.071em;
-
-    width: 100%;
-
-    background-color: $body-bg-color;
-    box-shadow: 0 0.714em 2.143em 0 color.adjust($primary-color, $hue: 23, $alpha: -0.9);
-    border-radius: 0.714em;
-  }
+  background-color: $body-bg-color;
+  box-shadow: 0 0.714em 2.143em 0 color.adjust($primary-color, $hue: 23, $alpha: -0.9);
+  border-radius: 0.714em;
 
   &::after {
     content: "";
 
     position: absolute;
     left: 1.929em;
-    bottom: 0;
+    bottom: -1.143em;
 
     width: 1.286em;
     height: 1.143em;
@@ -53,7 +41,6 @@
 
 .review-item__blockquote {
   margin: 0;
-  margin-bottom: 2.929em;
 
   &--sergey {
     padding-right: 0.357em;

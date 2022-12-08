@@ -20,7 +20,7 @@
     height: calc(100% + 6em);
 
     background-image: url("../img/shape-result-light-mobile.svg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -60,7 +60,7 @@
     height: calc(100% + 4em);
 
     background-image: url("../img/shape-result-blue-mobile.svg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -88,6 +88,8 @@
   line-height: 1.25;
   text-align: center;
   color: $body-bg-color;
+
+  background-color: $primary-color;
 }
 
 .result__list {
@@ -201,6 +203,8 @@
 
 @media (min-width: $desktop-width) {
   .result {
+    max-width: 90rem;
+    margin: 0 auto;
     padding-top: 4.5em;
     padding-bottom: 5.214em;
 
@@ -227,7 +231,7 @@
       width: 100%;
 
       background-image: url("../img/shape-result-blue-desktop.svg");
-      background-size: contain;
+      background-size: auto 100%;
       background-position: left center;
       background-repeat: no-repeat;
     }
@@ -261,6 +265,7 @@
   }
 
   .result__title {
+    width: 25%;
     margin-bottom: 1.6em;
 
     font-size: 2.5em;
