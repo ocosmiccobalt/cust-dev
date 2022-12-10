@@ -63,12 +63,16 @@
   &:focus {
     font-weight: 700;
     color: $section-heading-color;
-    text-decoration: underline;
 
     outline: none;
   }
 
   &::marker {
+    display: none;
+  }
+
+  // For IE11 with 'details-element-polyfill'
+  &::before {
     display: none;
   }
 

@@ -87,6 +87,11 @@
     display: none;
   }
 
+  // For IE11 with 'details-element-polyfill'
+  &::before {
+    display: none;
+  }
+
   &::after {
     content: " →";
 

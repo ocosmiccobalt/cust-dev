@@ -54,6 +54,7 @@
     "source/sass/**/*.{sass,scss}"
   ],
   "dependencies": {
-    "core-js": "^3.26.1"
+    "core-js": "^3.26.1",
+    "details-element-polyfill": "^2.4.0"
   }
 }

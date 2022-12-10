@@ -1,3 +1,4 @@
+import 'details-element-polyfill';
 import Nav from './components/nav';
 
 const work = () => {
