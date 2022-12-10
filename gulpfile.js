@@ -13,6 +13,74 @@ const svgstore = require("gulp-svgstore");
 const posthtml = require("gulp-posthtml");
 const include = require("posthtml-include");
 const htmlmin = require("gulp-htmlmin");
+const webpack = require("webpack-stream");
+
+const webpackDevOptions = {
+  mode: "development",
+  output: {
+    environment: {
+      arrowFunction: false
+    },
+    filename: "bundle.js"
+  },
+  watch: false,
+  devtool: "source-map",
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  debug: true,
+                  corejs: "3.26",
+                  useBuiltIns: "usage"
+                }
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  }
+};
+
+const webpackProdOptions = {
+  mode: "production",
+  output: {
+    environment: {
+      arrowFunction: false
+    },
+    filename: "bundle.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  corejs: "3.26",
+                  useBuiltIns: "usage"
+                }
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  }
+};
 
 function style() {
   return gulp.src("source/sass/style.scss")
@@ -59,8 +127,15 @@ function html() {
     .pipe(gulp.dest("build"));
 }
 
-function js() {
-  return gulp.src("source/js/**/*.js")
+function jsDev() {
+  return gulp.src("source/js/index.js")
+    .pipe(webpack(webpackDevOptions))
+    .pipe(gulp.dest("build/js"));
+}
+
+function jsProd() {
+  return gulp.src("source/js/index.js")
+    .pipe(webpack(webpackProdOptions))
     .pipe(gulp.dest("build/js"));
 }
 
@@ -83,7 +158,7 @@ function reload(done) {
 function watch() {
   gulp.watch("source/sass/**/*.{scss,sass}", style);
   gulp.watch("source/*.html", gulp.series(html, reload));
-  gulp.watch("source/js/**/*.js", gulp.series(js, reload));
+  gulp.watch("source/js/**/*.js", gulp.series(jsDev, reload));
 }
 
 exports.style = style;
@@ -91,7 +166,20 @@ exports.clean = clean;
 exports.copy = copy;
 exports.sprite = sprite;
 exports.html = html;
-exports.js = js;
+exports.jsDev = jsDev;
+exports.jsProd = jsProd;
+exports.buildDev = gulp.series(
+  clean,
+  gulp.parallel(
+    copy,
+    style
+  ),
+  sprite,
+  gulp.parallel(
+    html,
+    jsDev
+  )
+);
 exports.default = gulp.series(
   clean,
   gulp.parallel(
@@ -101,7 +189,7 @@ exports.default = gulp.series(
   sprite,
   gulp.parallel(
     html,
-    js
+    jsProd
   )
 );
 exports.dev = gulp.series(serve, watch);

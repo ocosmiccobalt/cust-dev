@@ -9,11 +9,14 @@
     "eslint": "eslint source/js/",
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
     "build": "gulp",
-    "start": "npm run build && gulp dev"
+    "start": "gulp buildDev && gulp dev"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^10.4.2",
+    "babel-loader": "^9.1.0",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "eslint": "^8.26.0",
@@ -33,7 +36,9 @@
     "posthtml-include": "^1.7.2",
     "sass": "^1.47.0",
     "stylelint": "^14.14.1",
-    "stylelint-config-htmlacademy": "^1.1.2"
+    "stylelint-config-htmlacademy": "^1.1.2",
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   },
   "browserslist": [
     "last 2 versions",
@@ -47,5 +52,8 @@
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
-  ]
+  ],
+  "dependencies": {
+    "core-js": "^3.26.1"
+  }
 }
