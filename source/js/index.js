@@ -1,3 +1,4 @@
+import 'picturefill';
 import 'details-element-polyfill';
 import Nav from './components/nav';
 

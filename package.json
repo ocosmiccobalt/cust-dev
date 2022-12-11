@@ -55,6 +55,7 @@
   ],
   "dependencies": {
     "core-js": "^3.26.1",
-    "details-element-polyfill": "^2.4.0"
+    "details-element-polyfill": "^2.4.0",
+    "picturefill": "^3.0.3"
   }
 }
