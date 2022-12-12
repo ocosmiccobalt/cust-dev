@@ -6,7 +6,8 @@ const work = () => {
   const navElem = document.querySelector(`.main-nav`);
 
   if (navElem !== null) {
-    new Nav(navElem);
+    const nav = new Nav(navElem);
+    nav.init();
   }
 };
 
