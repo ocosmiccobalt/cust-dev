@@ -110,7 +110,7 @@ function copy() {
 }
 
 function sprite() {
-  return gulp.src("source/img/icon-*.svg")
+  return gulp.src("source/img/sprite-icon-*.svg")
     .pipe(svgstore({
       inlineSvg: true
     }))
