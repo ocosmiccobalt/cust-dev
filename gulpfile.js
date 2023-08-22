@@ -14,6 +14,7 @@ const posthtml = require("gulp-posthtml");
 const include = require("posthtml-include");
 const htmlmin = require("gulp-htmlmin");
 const webpack = require("webpack-stream");
+const ghPages = require("gh-pages");
 
 const webpackDevOptions = {
   mode: "development",
@@ -161,6 +162,10 @@ function watch() {
   gulp.watch("source/js/**/*.js", gulp.series(jsDev, reload));
 }
 
+function deploy(done) {
+  ghPages.publish("build", done);
+}
+
 exports.style = style;
 exports.clean = clean;
 exports.copy = copy;
@@ -193,3 +198,4 @@ exports.default = gulp.series(
   )
 );
 exports.dev = gulp.series(serve, watch);
+exports.deploy = deploy;
