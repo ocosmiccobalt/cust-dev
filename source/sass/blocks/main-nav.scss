@@ -216,13 +216,30 @@
   @supports (display: grid) {
     .main-nav {
       display: grid;
-      grid-template-columns: [city-start] minmax(0, 37fr) repeat(2, minmax(0, 40fr)) [city-end link-start site-start] repeat(3, minmax(0, 40fr)) [link-end] minmax(0, 40fr) minmax(0, 37fr) [site-end];
-      grid-template-rows: [city-start link-start] min-content [city-end link-end site-start] min-content [site-end];
+      grid-template-columns:
+        [city-start]
+        minmax(0, 37fr) repeat(2, minmax(0, 40fr))
+        [city-end link-start site-start]
+        repeat(3, minmax(0, 40fr))
+        [link-end]
+        minmax(0, 40fr) minmax(0, 37fr)
+        [site-end];
+      grid-template-rows:
+        [city-start link-start]
+        min-content
+        [city-end link-end site-start]
+        min-content
+        [site-end];
       grid-column-gap: $mobile-gutter;
     }
 
     .main-nav--nojs {
-      grid-template-rows: [city-start site-start] min-content [city-end site-end link-start] min-content [link-end];
+      grid-template-rows:
+        [city-start site-start]
+        min-content
+        [city-end site-end link-start]
+        min-content
+        [link-end];
 
       & .main-nav__city-list {
         margin-right: 0;
@@ -336,8 +353,18 @@
   @supports (display: grid) {
     .main-nav {
       display: grid;
-      grid-template-columns: [city-start] repeat(4, minmax(0, 1fr)) [city-end site-start] repeat(6, minmax(0, 1fr)) [site-end link-start] repeat(2, minmax(0, 1fr)) [link-end];
-      grid-template-rows: [city-start site-start link-start] min-content [city-end site-end link-end ];
+      grid-template-columns:
+        [city-start]
+        repeat(4, minmax(0, 1fr))
+        [city-end site-start]
+        repeat(6, minmax(0, 1fr))
+        [site-end link-start]
+        repeat(2, minmax(0, 1fr))
+        [link-end];
+      grid-template-rows:
+        [city-start site-start link-start]
+        min-content
+        [city-end site-end link-end ];
       grid-column-gap: $desktop-gutter;
     }
 

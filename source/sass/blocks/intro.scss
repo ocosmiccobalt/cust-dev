@@ -150,8 +150,20 @@
   @supports (display: grid) {
     .intro__wrapper {
       display: grid;
-      grid-template-columns: [rating-start] minmax(0, 37fr) repeat(2, minmax(0, 40fr)) [rating-end inner-start] repeat(4, minmax(0, 40fr)) minmax(0, 37fr) [inner-end];
-      grid-template-rows: [inner-start] min-content [rating-start] 3.214em [inner-end] min-content [rating-end];
+      grid-template-columns:
+        [rating-start]
+        minmax(0, 37fr) repeat(2, minmax(0, 40fr))
+        [rating-end inner-start]
+        repeat(4, minmax(0, 40fr)) minmax(0, 37fr)
+        [inner-end];
+      grid-template-rows:
+        [inner-start]
+        min-content
+        [rating-start]
+        3.214em
+        [inner-end]
+        min-content
+        [rating-end];
       grid-column-gap: $mobile-gutter;
     }
 
@@ -222,8 +234,20 @@
 
   @supports (display: grid) {
     .intro__wrapper {
-      grid-template-columns: [rating-start] minmax(0, 1fr) [rating-end inner-start] minmax(0, 1fr) [inner-end];
-      grid-template-rows: [inner-start] min-content [rating-start] 7.357em [inner-end] min-content [rating-end];
+      grid-template-columns:
+        [rating-start]
+        minmax(0, 1fr)
+        [rating-end inner-start]
+        minmax(0, 1fr)
+        [inner-end];
+      grid-template-rows:
+        [inner-start]
+        min-content
+        [rating-start]
+        7.357em
+        [inner-end]
+        min-content
+        [rating-end];
       grid-column-gap: $desktop-gutter;
     }
 
